@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/config/colors.dart';
+import 'package:food_delivery_app/screens/home_screen/homeScreen.dart';
 import 'package:food_delivery_app/widgets/background.dart';
 import 'package:get/get.dart';
 
@@ -57,7 +58,7 @@ class CongratsScreen extends StatelessWidget {
             Center(
               child: CustomGradientButton(
                   ontap: () {
-                    Get.to(CongratsScreen());
+                    Get.to(const Homescreen());
                   },
                   text: 'Try Order'),
             ),
