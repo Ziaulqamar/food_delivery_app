@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_delivery_app/config/colors.dart';
 import 'package:food_delivery_app/widgets/background.dart';
+
+import 'components/notificationButton.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -26,30 +29,22 @@ class Homescreen extends StatelessWidget {
                     fontFamily: 'BentonSans Bold',
                   ),
                 ),
-                GestureDetector(
-                  child: Container(
-                    height: 45.h,
-                    width: 45.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xff144E5A).withOpacity(0.2),
-                          offset: const Offset(11, 28),
-                          blurRadius: 50,
-                          spreadRadius: 0,
-                        ),
-                      ],
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/icons/notificationIcon.svg',
-                      fit: BoxFit.none,
-                    ),
-                  ),
-                ),
+                const NotificationButton(),
               ],
             ),
+            Row(
+              children: [
+                SizedBox(
+                  height: 30.h,
+                  width: 100.w,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: AppColors.customOrange,
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
