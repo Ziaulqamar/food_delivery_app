@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delivery_app/screens/home_screen/homeScreen.dart';
 import 'package:get/get.dart';
 
 import '/screens/onboarding_screens/onboarding_screen.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: const OnboardingScreens(),
+        home: const Homescreen(),
       ),
     );
   }
