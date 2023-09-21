@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/config/colors.dart';
+import 'package:food_delivery_app/screens/congrats_screen/congrats_screen.dart';
 import 'package:food_delivery_app/widgets/background.dart';
+import 'package:get/get.dart';
 
+import 'components/filterButton.dart';
 import 'components/homeScreenCustomTextField.dart';
 import 'components/notificationButton.dart';
+import 'components/promotionalCardWidget.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -38,22 +42,11 @@ class Homescreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HomeScreenCustomTextField(),
-                GestureDetector(
-                  child: Container(
-                    height: 50.h,
-                    width: 50.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.customOrange.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(15.r),
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/icons/filterIcon.svg',
-                      fit: BoxFit.none,
-                    ),
-                  ),
-                ),
+                CustomFilterButton(),
               ],
             ),
+            SizedBox(height: 20.h),
+            PromotionalCardWidget(),
           ],
         ),
       ),
