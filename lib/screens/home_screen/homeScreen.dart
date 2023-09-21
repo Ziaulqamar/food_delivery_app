@@ -16,7 +16,7 @@ class Homescreen extends StatelessWidget {
       svg: 'assets/svg/background.svg',
       stretched: false,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
             SizedBox(height: 50.h),
@@ -35,8 +35,23 @@ class Homescreen extends StatelessWidget {
             ),
             SizedBox(height: 25.h),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HomeScreenCustomTextField(),
+                GestureDetector(
+                  child: Container(
+                    height: 50.h,
+                    width: 50.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.customOrange.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(15.r),
+                    ),
+                    child: SvgPicture.asset(
+                      'assets/icons/filterIcon.svg',
+                      fit: BoxFit.none,
+                    ),
+                  ),
+                ),
               ],
             ),
           ],
