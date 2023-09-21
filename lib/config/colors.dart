@@ -6,4 +6,5 @@ class AppColors {
   static final dropshadowColor = const Color(0xff5A6CEA).withOpacity(0.07);
 
   static const customOrange = Color(0xffF9A84D);
+  static const searchbarHintTextColor = Color(0xffDA6317);
 }

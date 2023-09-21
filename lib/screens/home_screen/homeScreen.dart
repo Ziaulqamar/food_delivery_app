@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/config/colors.dart';
 import 'package:food_delivery_app/widgets/background.dart';
 
+import 'components/homeScreenCustomTextField.dart';
 import 'components/notificationButton.dart';
 
 class Homescreen extends StatelessWidget {
@@ -32,19 +33,12 @@ class Homescreen extends StatelessWidget {
                 const NotificationButton(),
               ],
             ),
+            SizedBox(height: 25.h),
             Row(
               children: [
-                SizedBox(
-                  height: 30.h,
-                  width: 100.w,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      fillColor: AppColors.customOrange,
-                    ),
-                  ),
-                )
+                HomeScreenCustomTextField(),
               ],
-            )
+            ),
           ],
         ),
       ),
