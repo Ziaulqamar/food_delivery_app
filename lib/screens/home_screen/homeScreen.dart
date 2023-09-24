@@ -8,8 +8,10 @@ import 'package:get/get.dart';
 
 import 'components/filterButton.dart';
 import 'components/homeScreenCustomTextField.dart';
+import 'components/nearesRestaurantsWidget.dart';
 import 'components/notificationButton.dart';
 import 'components/promotionalCardWidget.dart';
+import 'components/restaurantCard.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -37,7 +39,7 @@ class Homescreen extends StatelessWidget {
                 const NotificationButton(),
               ],
             ),
-            SizedBox(height: 25.h),
+            SizedBox(height: 20.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,6 +49,41 @@ class Homescreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             PromotionalCardWidget(),
+            SizedBox(height: 20.h),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  NearestRestaurantsWidget(),
+                  SizedBox(height: 20.h),
+                  SizedBox(
+                    height: 184.h,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      children: [
+                        RestaurantCard(
+                          image: 'assets/images/veganRestaurant.png',
+                          restaurantName: 'Vegan Resto',
+                          restaurantTime: '12 Mins',
+                        ),
+                        RestaurantCard(
+                          image: 'assets/images/healthyRestaurant.png',
+                          restaurantName: 'Healthy Food',
+                          restaurantTime: '8 Mins',
+                        ),
+                        RestaurantCard(
+                          image: 'assets/images/goodFoodRestaurant.png',
+                          restaurantName: 'Good Food',
+                          restaurantTime: '12 Mins',
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
