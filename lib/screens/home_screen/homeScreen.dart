@@ -48,38 +48,45 @@ class Homescreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h),
-            PromotionalCardWidget(),
-            SizedBox(height: 20.h),
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  NearestRestaurantsWidget(),
+                  PromotionalCardWidget(),
                   SizedBox(height: 20.h),
-                  SizedBox(
-                    height: 184.h,
-                    width: double.infinity,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      children: [
-                        RestaurantCard(
-                          image: 'assets/images/veganRestaurant.png',
-                          restaurantName: 'Vegan Resto',
-                          restaurantTime: '12 Mins',
+                  Column(
+                    children: [
+                      restaurantsWidget(title: 'Nearest Restaurants'),
+                      SizedBox(height: 20.h),
+                      SizedBox(
+                        height: 184.h,
+                        width: double.infinity,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          children: [
+                            RestaurantCard(
+                              image: 'assets/images/veganRestaurant.png',
+                              restaurantName: 'Vegan Resto',
+                              restaurantTime: '12 Mins',
+                            ),
+                            RestaurantCard(
+                              image: 'assets/images/healthyRestaurant.png',
+                              restaurantName: 'Healthy Food',
+                              restaurantTime: '8 Mins',
+                            ),
+                            RestaurantCard(
+                              image: 'assets/images/goodFoodRestaurant.png',
+                              restaurantName: 'Good Food',
+                              restaurantTime: '12 Mins',
+                            ),
+                          ],
                         ),
-                        RestaurantCard(
-                          image: 'assets/images/healthyRestaurant.png',
-                          restaurantName: 'Healthy Food',
-                          restaurantTime: '8 Mins',
-                        ),
-                        RestaurantCard(
-                          image: 'assets/images/goodFoodRestaurant.png',
-                          restaurantName: 'Good Food',
-                          restaurantTime: '12 Mins',
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: 20.h),
+                      restaurantsWidget(title: 'Popular Menu'),
+                    ],
                   ),
                 ],
               ),
