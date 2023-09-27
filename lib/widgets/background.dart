@@ -5,7 +5,8 @@ class Background extends StatelessWidget {
   final String svg;
   final Widget child;
   final bool stretched;
-  const Background({super.key, 
+  const Background({
+    super.key,
     required this.svg,
     required this.child,
     required this.stretched,

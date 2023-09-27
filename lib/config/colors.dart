@@ -8,4 +8,7 @@ class AppColors {
   static const customOrange = Color(0xffF9A84D);
   static const customTextOrange = Color(0xffFF7C32);
   static const searchbarHintTextColor = Color(0xffDA6317);
+
+  static const popularMenuPriceColor = Color(0xffFEAD1D);
+  static final popularSubtitleColor = const Color(0xff3b3b3b).withOpacity(0.3);
 }

@@ -10,6 +10,7 @@ import 'components/filterButton.dart';
 import 'components/homeScreenCustomTextField.dart';
 import 'components/nearesRestaurantsWidget.dart';
 import 'components/notificationButton.dart';
+import 'components/popularMenuItem.dart';
 import 'components/promotionalCardWidget.dart';
 import 'components/restaurantCard.dart';
 
@@ -25,7 +26,7 @@ class Homescreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-            SizedBox(height: 50.h),
+            SizedBox(height: 40.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -48,47 +49,67 @@ class Homescreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  PromotionalCardWidget(),
-                  SizedBox(height: 20.h),
-                  Column(
-                    children: [
-                      restaurantsWidget(title: 'Nearest Restaurants'),
-                      SizedBox(height: 20.h),
-                      SizedBox(
-                        height: 184.h,
-                        width: double.infinity,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          physics: const BouncingScrollPhysics(),
-                          children: [
-                            RestaurantCard(
-                              image: 'assets/images/veganRestaurant.png',
-                              restaurantName: 'Vegan Resto',
-                              restaurantTime: '12 Mins',
-                            ),
-                            RestaurantCard(
-                              image: 'assets/images/healthyRestaurant.png',
-                              restaurantName: 'Healthy Food',
-                              restaurantTime: '8 Mins',
-                            ),
-                            RestaurantCard(
-                              image: 'assets/images/goodFoodRestaurant.png',
-                              restaurantName: 'Good Food',
-                              restaurantTime: '12 Mins',
-                            ),
-                          ],
+            SizedBox(
+              height: 425.h,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    PromotionalCardWidget(),
+                    SizedBox(height: 20.h),
+                    Column(
+                      children: [
+                        restaurantsWidget(title: 'Nearest Restaurants'),
+                        SizedBox(height: 20.h),
+                        Container(
+                          height: 184.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.dropshadowColor,
+                                blurRadius: 50.r,
+                                offset: const Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            physics: const BouncingScrollPhysics(),
+                            children: [
+                              RestaurantCard(
+                                image: 'assets/images/veganRestaurant.png',
+                                restaurantName: 'Vegan Resto',
+                                restaurantTime: '12 Mins',
+                              ),
+                              RestaurantCard(
+                                image: 'assets/images/healthyRestaurant.png',
+                                restaurantName: 'Healthy Food',
+                                restaurantTime: '8 Mins',
+                              ),
+                              RestaurantCard(
+                                image: 'assets/images/goodFoodRestaurant.png',
+                                restaurantName: 'Good Food',
+                                restaurantTime: '12 Mins',
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20.h),
-                      restaurantsWidget(title: 'Popular Menu'),
-                    ],
-                  ),
-                ],
+                        SizedBox(height: 20.h),
+                        restaurantsWidget(title: 'Popular Menu'),
+                        SizedBox(height: 20.h),
+                        PopularMenuItem(
+                          image: 'assets/images/greenNoodles.png',
+                          title: 'Green Noodles',
+                          subtitle: 'Noodle Home',
+                          price: '15',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
